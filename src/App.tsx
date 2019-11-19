@@ -3,6 +3,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import Greetings from "./Greetings";
 import Counter from "./Counter";
+import MyForm, { MyFormType } from "./MyForm";
 
 const App: React.FC = () => {
   const onClick = (name: string) => {
@@ -12,6 +13,11 @@ const App: React.FC = () => {
     <div>
       <Greetings name="hello" onClick={onClick} />
       <Counter />
+      <MyForm
+        onSubmit={(form: MyFormType) => {
+          console.log(form.name, form.description);
+        }}
+      />
     </div>
   );
 };
