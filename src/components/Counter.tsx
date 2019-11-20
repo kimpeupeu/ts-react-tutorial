@@ -1,5 +1,4 @@
 import React from "react";
-import { increase, decrease } from "../modules/counter";
 
 type CounterProps = {
   count: number;
