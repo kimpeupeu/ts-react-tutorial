@@ -1,23 +1,6 @@
-import { createAction, ActionType, createReducer } from "typesafe-actions";
-
-const ADD_TODO = "todos/ADD_TODO";
-const TOGGLE_TODO = "todos/TOGGLE_TODO";
-const REMOVE_TODO = "todos/REMOVE_TODO";
-
-export const addTodo = createAction(ADD_TODO)<string>();
-export const toggleTodo = createAction(TOGGLE_TODO)<number>();
-export const removeTodo = createAction(REMOVE_TODO)<number>();
-
-const actions = { addTodo, toggleTodo, removeTodo };
-
-type TodosAction = ActionType<typeof actions>;
-
-export type Todo = {
-  id: number;
-  text: string;
-  done: boolean;
-};
-type TodosState = Todo[];
+import { TodosState, TodosAction } from "./types";
+import { createReducer } from "typesafe-actions";
+import { ADD_TODO, TOGGLE_TODO, REMOVE_TODO } from "./actions";
 
 const initialState: TodosState = [
   {
